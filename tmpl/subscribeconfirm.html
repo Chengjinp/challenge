@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -36,7 +36,9 @@
 	  <div class="row"><h4 class="modal-title"><img src="assets/stacked.png" align="center" height="100" style="display: block; margin: auto"></h4></div>
         </div>
         <div class="modal-body">
-		<p style="text-align: center">Welcome to PocketHealth, <b>{{.Name}}</b>!<br><br>We have dispatched an email to <b>{{.Email}}</b> and sent a confirmation code to <b>{{.Tel}}</b>.</p>
+		<p style="text-align: center">Welcome to PocketHealth, <b>{{.Name}}</b>!<br><br>
+    Your favourite colour is <b>{{.FavouriteColour}}</b><br><br>
+    We have dispatched an email to <b>{{.Email}}</b> and sent a confirmation code to <b>{{.Tel}}</b>.</p>
 	</div>
         <div class="modal-footer">
 		<p style="text-align: center">

@@ -13,7 +13,7 @@ import (
 )
 
 // todo: need read from environment
-var listeningPort = "8080"
+var listeningPort = "80"
 var sqliteDatabasename = "sqlite-challenge.db"
 
 // SubscribeConfirmPage type of subscribe info
@@ -93,8 +93,19 @@ func handleSubscribeConfirm(w http.ResponseWriter, r *http.Request) {
 
 // handleDefault home page
 func handleDefault(w http.ResponseWriter, r *http.Request) {
-	t, _ := template.ParseFiles("tmpl/default.html")
-	t.Execute(w, "")
+	fmt.Println(r.RequestURI)
+
+	t, err := template.ParseFiles("tmpl/default.html")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	if t != nil {
+		t.Execute(w, "")
+	} else {
+		fmt.Println("Cannot find tmpl/default.html")
+	}
+
 }
 
 // handleSubscribeList return list of subscribe
